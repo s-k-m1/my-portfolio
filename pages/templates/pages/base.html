@@ -3,9 +3,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- UPDATED: Keep a single title block for each page -->
     <title>{% block title %}Saroj Kumar Mahato Portfolio{% endblock %}</title>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'pages/css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    {% block extra_css %}{% endblock %}
 </head>
 <body>
 
@@ -34,54 +39,33 @@
 </header>
 
 <main class="main-content">
+    <!-- UPDATED: content block for page content -->
     {% block content %}{% endblock %}
 </main>
 
 <footer id="footer">
-    <p>© 2026 Saroj Kumar Mahato. All rights reserved.</p>
+    <div class="footer-content">
+        <p>© 2026 Saroj Kumar Mahato. All rights reserved.</p>
+
+        <div class="social-icons">
+            <a href="https://github.com/s-k-m1" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+            </a>
+            
+            <a href="https://www.facebook.com/share/18Dr382Ajv/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-facebook"></i>
+            </a>
+
+            <a href="https://www.instagram.com/0skm5.0/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/saroj-kumar-mahato-212382351/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </div>
 </footer>
-
-<!-- JS: Smart hide/show navbar/footer + Hamburger -->
-<script>
-const header = document.getElementById("header");
-const footer = document.getElementById("footer");
-let lastScroll = 0;
-
-// Hide/show header/footer on scroll
-window.addEventListener("scroll", () => {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll > lastScroll) {
-        // Scrolling down → hide
-        header.style.top = "-100px";
-        footer.style.bottom = "-100px";
-    } else {
-        // Scrolling up → show
-        header.style.top = "0";
-        footer.style.bottom = "0";
-    }
-
-    lastScroll = currentScroll;
-});
-
-// Hamburger toggle for mobile
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("nav-links");
-
-hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
-
-const links = document.querySelectorAll('.nav-links a');
-
-links.forEach(link => {
-    link.addEventListener('click', () => {
-        link.classList.remove('active'); // reset animation
-        void link.offsetWidth;           // trigger reflow
-        link.classList.add('active');    // start animation
-    });
-});
-
-</script>
+<script src="{% static 'js/base.js' %}"></script>
 </body>
 </html>

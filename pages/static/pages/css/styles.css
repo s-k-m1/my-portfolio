@@ -107,9 +107,38 @@ footer {
     background: #1e293b;
     color: #e0e7ff;
     text-align: center;
-    padding: 20px;
+    padding: 20px 10px;
     transition: bottom 0.3s ease;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
 }
+
+/* Footer Content Layout */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Social Icons Container */
+.social-icons {
+    display: flex;
+    gap: 18px;
+}
+
+/* Social Icons Style */
+.social-icons a {
+    color: #e0e7ff;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Animation */
+.social-icons a:hover {
+    color: #38bdf8; /* modern blue highlight */
+    transform: translateY(-5px) scale(1.1);
+}
+
 
 /* =========================
    HERO SECTION (Home)

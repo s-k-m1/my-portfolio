@@ -1,10 +1,118 @@
 {% extends "pages/base.html" %}
+{% load static %}
 
-{% block title %}
-About | SKM Portfolio
+{% block title %}About - Saroj Kumar Mahato{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'pages/css/about.css' %}">
 {% endblock %}
 
 {% block content %}
-<h1>Welcome to My Portfolio</h1>
-<p>this is mine about page </p>
+
+<!-- ABOUT SECTION -->
+<section class="about-section">
+    <div class="about-container">
+
+        <!-- Hero Section -->
+        <div class="about-hero">
+            <h1>About Me</h1>
+            <h2>Hi, I'm Saroj Kumar Mahato 👋</h2>
+            <p>
+                I am a passionate BCSIT student from Kathmandu, Nepal, 
+                dedicated to learning modern web development technologies 
+                and building professional digital solutions.
+            </p>
+        </div>
+
+        <!-- Personal Info -->
+        <div class="about-card">
+            <h3>Personal Information</h3>
+            <ul>
+                <li><strong>Full Name:</strong> Saroj Kumar Mahato</li>
+                <li><strong>Address:</strong> Kathmandu, Nepal</li>
+                <li><strong>+2 Education:</strong> NEB - Xavier International College, Kalopul</li>
+                <li><strong>Current Study:</strong> BCSIT (Pokhara University)</li>
+                
+            </ul>
+        </div>
+
+        <!-- Education -->
+        <div class="about-card">
+            <h3>Education</h3>
+
+            <div class="education-item">
+                <h4>+2 (Science Stream)</h4>
+                <p>NEB - Xavier International College, Kalopul</p>
+            </div>
+
+            <div class="education-item">
+                <h4>Bachelor in Computer System & Information Technology (BCSIT)</h4>
+                <p>Pokhara University</p>
+                <span>Currently Studying</span>
+            </div>
+
+            </div>
+
+        <!-- Skills -->
+        <div class="about-card">
+            <h3>Technical Skills</h3>
+
+            <div class="skills-grid">
+
+                <!-- Front-end Skills -->
+                <div class="skills-card">
+                    <h4>Front-end</h4>
+                    <div class="skill">
+                        <span class="skill-name">HTML/CSS <span class="skill-percent">95%</span></span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">Basic JavaScript <span class="skill-percent">80%</span></span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Back-end Skills -->
+                <div class="skills-card">
+                    <h4>Back-end</h4>
+                    <div class="skill">
+                        <span class="skill-name">Python (Django) <span class="skill-percent">70%</span></span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="70"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">Basic C <span class="skill-percent">60%</span></span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="60"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">Basic Java <span class="skill-percent">55%</span></span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="55"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">Basic PHP <span class="skill-percent">50%</span></span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="50"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/about.js' %}"></script>
 {% endblock %}
