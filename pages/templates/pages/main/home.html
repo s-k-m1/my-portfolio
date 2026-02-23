@@ -1,0 +1,67 @@
+{% extends "pages/base.html" %}
+{% load static %}
+
+{% block title %}
+Home - Saroj Kumar Mahato
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-container">
+
+        <!-- Left Image -->
+        <div class="hero-image">
+            <div class="image-wrapper">
+                <img src="{% static 'images/skm-pic.png' %}" alt="Saroj Kumar Mahato">
+            </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">Saroj Kumar Mahato</span></h1>
+
+            <div class="role-badge">
+                Full Stack Developer
+            </div>
+
+            <p>
+                Welcome to my portfolio website. I build modern web applications 
+                using Django and frontend technologies.
+            </p>
+
+            <a href="#" class="btn-primary">View My Projects</a>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Recent Work Section -->
+<section class="work-section">
+    <h2 class="section-title">My Recent Work</h2>
+
+    <div class="work-container">
+
+        <div class="work-card">
+            <h3>E-commerce Platform</h3>
+            <p>Online shopping system built with Django.</p>
+            <a href="#">View Project</a>
+        </div>
+
+        <div class="work-card">
+            <h3>Task Management App</h3>
+            <p>Task tracking application with authentication.</p>
+            <a href="#">View Project</a>
+        </div>
+
+        <div class="work-card">
+            <h3>Portfolio Website v2</h3>
+            <p>Modern responsive portfolio built using Django.</p>
+            <a href="#">View Project</a>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

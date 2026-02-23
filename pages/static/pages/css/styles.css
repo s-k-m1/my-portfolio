@@ -1,0 +1,505 @@
+/* =========================
+   Global
+========================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #fff;
+}
+
+/* =========================
+   Header
+========================= */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    background: #0f172a;
+    padding: 18px 0;
+}
+
+header.scrolled {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+/* =========================
+   Navbar
+========================= */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 70px;
+    position: relative;
+}
+
+/* Logo Left */
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #6366f1;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 50px;        /* Maintain consistent size */
+    width: 45px;         /* Make it square */
+    object-fit: cover;   /* Prevent distortion */
+    border-radius: 12px; /* Rounded corners */
+}
+
+/* Menu Right */
+/* Center the menu */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: red;
+    font-weight: 800;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #3b82f6;
+}
+/* Hamburger for mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background: #f8fafc;
+    border-radius: 3px;
+}
+
+/* =========================
+   Main Section
+========================= */
+main {
+    background: #111827;
+    padding: 0px; 
+}
+
+/* =========================
+   Footer
+========================= */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #1e293b;
+    color: #e0e7ff;
+    text-align: center;
+    padding: 20px;
+    transition: bottom 0.3s ease;
+}
+
+/* =========================
+   HERO SECTION (Home)
+========================= */
+
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at top left, #1e293b, #0f172a 70%);
+    padding: 80px;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+}
+
+/* LEFT IMAGE */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-wrapper {
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    padding: 6px;
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    box-shadow: 0 0 50px rgba(59, 130, 246, 0.6);
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 60%;
+    object-fit: cover;
+}
+
+/* RIGHT CONTENT */
+.hero-content {
+    flex: 1;
+    padding-left: 70px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: #60a5fa;
+}
+
+.role-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    max-width: 500px;
+    color: #cbd5e1;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* BUTTON */
+.btn-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+    border-radius: 30px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.5);
+}
+
+/* =========================
+   RECENT WORK SECTION
+========================= */
+
+.work-section {
+    padding: 0px 60px 10px;
+    background: #0f172a;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+}
+
+.work-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.work-card {
+    background: #1e293b;
+    width: 320px;
+    padding: 30px;
+    border-radius: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.15);
+}
+
+.work-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3);
+}
+
+.work-card h3 {
+    margin-bottom: 15px;
+}
+
+.work-card p {
+    color: #cbd5e1;
+    margin-bottom: 15px;
+}
+
+.work-card a {
+    text-decoration: none;
+    color: #60a5fa;
+    font-weight: 500;
+}
+
+/* =========================
+   RESPONSIVE HERO
+========================= */
+
+@media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        padding-left: 0;
+        margin-top: 40px;
+    }
+
+    .image-wrapper {
+        width: 260px;
+        height: 260px;
+    }
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #0f172a;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+        padding: 10px;
+        gap: 15px;
+        border-radius: 0 0 0 5px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+/* ==============================
+   Contact Section Layout
+============================== */
+.contact-section {
+    background: #0f172a;
+    padding: 80px 20px;
+    color: #fff;
+}
+
+.contact-wrapper {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.contact-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-header p {
+    color: #94a3b8;
+}
+
+/* ==============================
+   Grid Layout
+============================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+}
+
+/* ==============================
+   Left Card (Contact Info)
+============================== */
+.contact-info-card {
+    background: #111827;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.contact-info-card h3 {
+    margin-bottom: 30px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.info-item .icon {
+    font-size: 1.4rem;
+    margin-right: 15px;
+}
+
+.info-item h4 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.info-item p {
+    margin: 5px 0 0;
+    color: #9ca3af;
+    font-size: 0.95rem;
+}
+
+/* ==============================
+   Right Card (Form)
+============================== */
+.contact-form-card {
+    background: #111827;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.contact-form-card h3 {
+    margin-bottom: 25px;
+}
+
+/* ==============================
+   Form Styling
+============================== */
+.contact-form .form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.contact-form .form-control {
+    width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #374151;
+    background-color: #1e293b;
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.contact-form .form-control:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 10px rgba(99,102,241,0.4);
+}
+
+/* Floating Labels */
+.contact-form label {
+    position: absolute;
+    left: 15px;
+    top: 16px;
+    color: #9ca3af;
+    pointer-events: none;
+    transition: 0.3s ease;
+    background: #111827;
+    padding: 0 5px;
+}
+
+.contact-form .form-control:focus + label,
+.contact-form .form-control:not(:placeholder-shown) + label {
+    top: -10px;
+    font-size: 0.75rem;
+    color: #6366f1;
+}
+
+/* Button */
+.contact-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg,#6366f1,#4f46e5);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99,102,241,0.4);
+}
+
+/* ==============================
+   Responsive
+============================== */
+@media(max-width: 992px){
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==============================
+   Professional Toast Alert
+============================== */
+.alert {
+    position: fixed;
+    top: 20px;          /* closer to top */
+    right: 50%;         /* center horizontally */
+    transform: translateX(50%) translateY(-100%); /* start hidden above */
+    min-width: 260px;
+    max-width: 320px;
+    padding: 14px 18px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 9999;
+}
+
+.alert.show {
+    opacity: 1;
+    transform: translateX(50%) translateY(0); /* slide down from top */
+}
+
+/* Success */
+.alert.success {
+    background: #10b981;
+    color: #ffffff;
+}
+
+/* Warning */
+.alert.warning {
+    background: orangered;
+    color: #ffffff;
+}
+
+/* Error */
+.alert.error {
+    background: red;
+    color: #ffffff;
+}
